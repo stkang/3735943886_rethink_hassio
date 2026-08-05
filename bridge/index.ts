@@ -327,8 +327,12 @@ export class Bridge extends TypedEmitter<BridgeEvents> {
                 throw err
             }
 
-            statusCallback('Adding device to home')
-            await client.addDevice(clientDevice, alias, deviceType, ciphertext)
+            if (removeFirst) {
+                statusCallback('Adding device to home')
+                await client.addDevice(clientDevice, alias, deviceType, ciphertext)
+            } else {
+                statusCallback(`Preserving existing device registration (${alias})`)
+            }
 
             // Persist the physical device's real deploy info alongside the topics, so the
             // upstream preDeploy can report the true protocolVer/softVer/etc. even after a
