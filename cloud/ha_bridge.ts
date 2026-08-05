@@ -16,6 +16,7 @@ import F_VB_F___W_B_2QEUK from './devices/F_VB_F___W.B_2QEUK'
 import VCDWL2QEUK from './devices/VCDWL2QEUK'
 import CST_570004_WW from './devices/CST_570004_WW'
 import CST_170004_WW from './devices/CST_170004_WW'
+import CST_1A4001_WW from './devices/CST_1A4001_WW'
 import T1789EFH_F from './devices/T1789EFH_F'
 import RV13U6AM8W_D_US_WIFI from './devices/RV13U6AM8W_D_US_WIFI'
 import F3L2CYU__ from './devices/F3L2CYU__'
@@ -52,6 +53,7 @@ const t2deviceTypes: Record<string, T2Factory> = {
     ['RAC_0B0001_WW']: RAC_056905_WW, // a different European variant (deviceType 401, RTK_RTL8720cm), same TLV handler
     CST_570004_WW, // LG ceiling-cassette IDU (multi-split, deviceType 401); RAC handler + 0xa7 header normalization
     CST_170004_WW, // LG wall/built-in IDU (multi-split, deviceType 401); DualCool TLV via ac_common
+    CST_1A4001_WW, // LG IDU (deviceType 401); wire-compatible with CST_170004_WW
     WIN_056905_WW,
     DHUM_056905_WW, // LG dehumidifier (deviceType 403); same TLV family, humidifier platform
     ['2REF11EIDA__4']: Dev_2REF11EIDA__4,
