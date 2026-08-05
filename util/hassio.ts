@@ -18,10 +18,6 @@ type Options = {
     mqtt_url?: string
     mqtt_user?: string
     mqtt_pass?: string
-    https_port?: number
-    mqtts_port?: number
-    thinq1_https_port?: number
-    thinq1_port?: number
     log?: string[]
 }
 
@@ -75,11 +71,9 @@ export async function loadHassioConfig(optionsPath: string = HASSIO_OPTIONS): Pr
         },
         ca_key_file: 'ca.key',
         ca_cert_file: 'ca.cert',
-        https_port: opts.https_port ?? 4443,
-        mqtts_port: opts.mqtts_port ?? 8885,
+        https_port: 443,
+        mqtts_port: 8883,
         mqtt_port: 1884,
-        thinq1_https_port: opts.thinq1_https_port,
-        thinq1_port: opts.thinq1_port,
         management_port: 44401,
         log: opts.log ?? ['status', 'incoming', 'HTTPS', 'publish', 'MGMT'],
     }

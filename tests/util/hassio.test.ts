@@ -28,7 +28,6 @@ describe('loadHassioConfig', () => {
             mqtt_url: 'mqtt://10.0.0.5:1883',
             mqtt_user: 'u',
             mqtt_pass: 'p',
-            https_port: 8443,
             log: ['status', 'all'],
         })
         const c = await loadHassioConfig(path)
@@ -38,8 +37,8 @@ describe('loadHassioConfig', () => {
         assert.equal(c.homeassistant.mqtt_user, 'u')
         assert.equal(c.homeassistant.mqtt_pass, 'p')
         assert.equal(c.advertise_requested_host, true)
-        assert.equal(c.https_port, 8443)
-        assert.equal(c.mqtts_port, 8885) // default applied
+        assert.equal(c.https_port, 443)
+        assert.equal(c.mqtts_port, 8883) // default applied
         assert.equal(c.management_port, 44401)
         assert.deepEqual(c.bridge, { storage_path: 'state' })
         assert.deepEqual(c.log, ['status', 'all'])

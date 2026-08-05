@@ -33,8 +33,8 @@ panel_title: Rethink
 # Device-facing ports. Appliances connect to the Home Assistant host on these
 # ports once you redirect the ThinQ DNS names to the host (see docs).
 ports:
-    4443/tcp: 4443
-    8885/tcp: 8885
+    443/tcp: 4443
+    8883/tcp: 8885
     46030/tcp: 46030
     47878/tcp: 47878
 ports_description:
@@ -53,10 +53,6 @@ options:
     mqtt_url: ''
     mqtt_user: ''
     mqtt_pass: ''
-    https_port: 4443
-    mqtts_port: 8885
-    thinq1_https_port: 46030
-    thinq1_port: 47878
     log:
         - status
         - incoming
@@ -78,10 +74,6 @@ schema:
     mqtt_url: str?
     mqtt_user: str?
     mqtt_pass: password?
-    https_port: port
-    mqtts_port: port
-    thinq1_https_port: port
-    thinq1_port: port
     log:
         - list(status|incoming|HTTPS|publish|MGMT|all)
 
